@@ -24,7 +24,7 @@ export function NewGrid({ className, dados }: GridProps) {
         <tbody>
           {dados?.map((item) => {
             return(
-              <Row key={item.id} {...item}/>
+              <Row key={item.id} dados={item}/>
             );
           })}
         </tbody>
