@@ -1,15 +1,16 @@
 import { Row } from "components/Rows";
 import { ITask } from "interfaces";
+import { ReactNode } from "react";
 import { Container } from "./styled";
 
 export * from "./styled";
 
 type GridProps = {
   className?: string;
-  dados?: ITask[];
+  children: ReactNode
 };
 
-export function NewGrid({ className, dados }: GridProps) {
+export function NewGrid({ className, children }: GridProps) {
   return (
     <Container className={className}>
       <table>
@@ -22,11 +23,7 @@ export function NewGrid({ className, dados }: GridProps) {
           </tr>
         </thead>
         <tbody>
-          {dados?.map((item) => {
-            return(
-              <Row key={item.id} dados={item}/>
-            );
-          })}
+          {children}
         </tbody>
       </table>
     </Container>
