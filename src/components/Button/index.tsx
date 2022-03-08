@@ -6,13 +6,12 @@ type ButtonProps = {
   className?: string;
   buttonName?: string;
   onClick?: MouseEventHandler
-  id: string;
 };
 
-export function Button({ className, buttonName, onClick, id }: ButtonProps) {
+export function Button({ className, buttonName, onClick}: ButtonProps) {
   return (
     <Container>
-      <button onClick={onClick} className={className} id={id}>
+      <button onClick={onClick} className={className}>
         <span>{buttonName}</span>
       </button>
     </Container>
